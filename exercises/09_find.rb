@@ -1,5 +1,12 @@
+def find(hashes, &block)
+  result = nil
 
+  hashes.each do |hash|
+    result = hash if block.call(hash)
+  end
 
+  result
+end
 # ------ code above this line ------
 
 require 'rspec/autorun'
