@@ -1,7 +1,17 @@
+# WITH INJECT
+# def reduce(items, start)
+#   result = items.inject(start) do |memo, item|
+#     yield(memo, item)
+#   end
+# end
+
+# WITHOUT INJECT
 def reduce(items, start)
-  result = items.inject(start) do |memo, item|
-    yield(memo, item)
+  result = start
+  items.each do |item|
+    result = yield(result, item)
   end
+  result
 end
 
 
