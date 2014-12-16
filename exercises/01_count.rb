@@ -1,4 +1,9 @@
 def count(words, &block)
+  count = 0
+  words.each do |word|
+    count += 1 if block.call(word)
+  end
+  count
 end
 
 # ------ code above this line ------
