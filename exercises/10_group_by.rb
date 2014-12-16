@@ -1,4 +1,7 @@
-
+def group_by(hashes, &block)
+  result = {}
+  
+end
 
 # ------ code above this line ------
 
