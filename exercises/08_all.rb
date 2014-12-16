@@ -1,4 +1,9 @@
-
+def all?(words, &block)
+  words.each do |word|
+    return false if block.call(word)
+  end
+  true
+end
 
 # ------ code above this line ------
 
