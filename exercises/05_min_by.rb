@@ -1,5 +1,23 @@
+
 def min_by(items, &block)
+
+
+  longest = nil
+
+  items.each do |item|
+
+    longest ||= item
+    longest = item if block.call(item) < block.call(longest)
+
+  end
+
+  longest
+
 end
+
+
+
+
 
 # ------ code above this line ------
 

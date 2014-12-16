@@ -1,5 +1,16 @@
-def reject(items, &block)
-end
+# def reject(items, &block)
+#
+#   result = []
+#
+#   items.each do |item|
+#     if block.call(item)
+#       result += item
+#     end
+#   end
+# X X  X X X X X X X X  X X X X X X X X X  X X X X X X X X
+#   puts result
+#
+# end
 
 # ------ code above this line ------
 

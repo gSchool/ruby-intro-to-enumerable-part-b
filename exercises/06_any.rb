@@ -1,3 +1,17 @@
+def any?(items, &block)
+
+  result = false
+
+  items.each do |item|
+    if block.call(item)
+      return true
+    end
+  end
+
+result
+
+end
+
 
 
 # ------ code above this line ------
