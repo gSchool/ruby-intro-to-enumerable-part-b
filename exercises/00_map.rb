@@ -1,3 +1,15 @@
+def reduce(items, value, &block)
+
+  result = value
+
+  items.each do |item|
+    result = block.call(result, item)
+  end
+
+  result
+
+end
+
 def map(items, &block)
 
   result = []
@@ -8,7 +20,10 @@ def map(items, &block)
   end
 
   result
+
 end
+
+
 
 # ------ code above this line ------
 
