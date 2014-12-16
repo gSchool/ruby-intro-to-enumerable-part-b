@@ -1,8 +1,7 @@
 def map(items, &block)
   result = []
   items.each do |item|
-    transformed_item = block.call(item)
-    result << transformed_item
+    result << block.call(item)
   end
   result
 end
