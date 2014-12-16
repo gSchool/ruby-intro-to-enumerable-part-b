@@ -1,4 +1,11 @@
+def all?(input, &block)
 
+  input.each do |input|
+    return false if !block.call(input)
+  end
+
+  return true
+end
 
 # ------ code above this line ------
 
