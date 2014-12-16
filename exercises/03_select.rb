@@ -1,9 +1,7 @@
 def select(items, &block)
   result = []
   items.each do |item|
-    if block.call(item)
-      result << item
-    end
+    result << item if block.call(item)
   end
   result
 end
