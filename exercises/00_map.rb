@@ -1,4 +1,10 @@
 def map(items, &block)
+  result = []
+  items.each do |item|
+    transformed_item = block.call(item)
+    result << transformed_item
+  end
+  result
 end
 
 # ------ code above this line ------
