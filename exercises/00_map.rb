@@ -1,6 +1,16 @@
 def map(items, &block)
+  result = []
+
+  items.each do |item|
+    result << block.call(item)
+  end
+
+  result
 end
 
+map([]) do |word|
+  word.upcase
+end
 # ------ code above this line ------
 
 require 'rspec/autorun'

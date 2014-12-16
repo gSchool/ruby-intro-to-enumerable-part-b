@@ -1,6 +1,12 @@
 def count(words, &block)
-end
+  result = 0
 
+  words.each do |word|
+    result += 1 if block.call(word)
+  end
+
+  result
+end
 # ------ code above this line ------
 
 require 'rspec/autorun'
