@@ -1,4 +1,14 @@
+def find(inputs, &block)
+  result = nil
 
+  inputs.each do |input|
+    if block.call(input)
+      result = input
+    end
+  end
+
+  result
+end
 
 # ------ code above this line ------
 
