@@ -1,7 +1,7 @@
 def map(items, &block)
 end
 
-# ------ code above this line ------
+# -------- code above this line ------
 
 require 'rspec/autorun'
 
