@@ -1,3 +1,9 @@
+def reduce(items, start)
+  result = items.inject(start) do |memo, item|
+    yield(memo, item)
+  end
+end
+
 
 # ------ code above this line ------
 
