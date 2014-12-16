@@ -1,11 +1,9 @@
 def max_by(items, &block)
   max_item = nil
-  length = 0
   items.each do |item|
-    if block.call(item) > length
-      length = block.call(item)
-      max_item = item
-    end
+    max_item ||= item
+    max_item = item if block.call(max_item) < block.call(item)
+    
   end
   max_item
 end

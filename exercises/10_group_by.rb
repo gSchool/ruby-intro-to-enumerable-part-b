@@ -1,6 +1,12 @@
 def group_by(hashes, &block)
   result = {}
-  
+  hashes.each do |hash|
+    value = block.call(hash)
+    result[value] ||= []
+    result[value] << hash
+  end
+  result
+
 end
 
 # ------ code above this line ------
