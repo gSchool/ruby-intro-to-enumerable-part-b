@@ -1,5 +1,33 @@
 def count(words, &block)
+
+  result = 0
+
+  new_array = []
+
+  words.each do |word|
+    if block.call(word)
+      new_array << word
+    end
+    result = new_array.count
+  end
+
+  result
+
 end
+# 
+# def count(words, &block)
+#
+#   result = 0
+#
+#   words.each do |word|
+#     if block.call(word)
+#       result += 1
+#     end
+#   end
+#
+#   result
+#
+# end
 
 # ------ code above this line ------
 

@@ -1,4 +1,13 @@
 def map(items, &block)
+
+  result = []
+
+  items.each do |item|
+    capital_item = block.call(item)
+    result << capital_item
+  end
+
+  result
 end
 
 # ------ code above this line ------

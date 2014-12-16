@@ -1,5 +1,23 @@
 def min_by(items, &block)
+
+  result = nil
+
+  length = nil
+
+  items.each do |item|
+    if length == nil
+      length = block.call(item)
+      result = item
+    elsif block.call(item) < length
+      length = block.call(item)
+      result = item
+    end
+  end
+  
+  result
+
 end
+
 
 # ------ code above this line ------
 
