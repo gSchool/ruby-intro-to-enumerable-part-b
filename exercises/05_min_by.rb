@@ -1,8 +1,7 @@
 def min_by(items, &block)
   result = nil
   items.each do |item|
-    result ||= 'a' * 40 if item.is_a?(String)
-    result ||= 999999999 if item.is_a?(Fixnum)
+    result ||= item
     result = item if block.call(item) < block.call(result)
   end
   result
