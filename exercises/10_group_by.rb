@@ -1,4 +1,12 @@
-
+def group_by(items, &block)
+  result = {}
+  items.each do |item|
+    group_key = block.call(item)
+    result[group_key] ||= []
+    result[group_key] << item
+  end
+  result
+end
 
 # ------ code above this line ------
 
@@ -38,6 +46,6 @@ RSpec.describe '#group_by' do
   it 'returns nil as a key when given a hash that does not contain the given key' do
     input = [ {y: 5} ]
 
-    expect(group_by(input) { |hsh| hsh[:x] })
+    expect(group_by(input) { |hsh| hsh[:x] }).to eq({nil => [{y: 5}]})
   end
 end
