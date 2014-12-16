@@ -1,4 +1,13 @@
+def group_by(inputs, &block)
+  result = {}
 
+  inputs.each do |input|
+    result[block.call(input)] ||= []
+    result[block.call(input)] << input
+  end
+
+  result
+end
 
 # ------ code above this line ------
 

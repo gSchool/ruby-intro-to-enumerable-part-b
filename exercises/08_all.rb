@@ -1,4 +1,14 @@
+def all?(inputs, &block)
+  result = true
 
+  inputs.each do |input|
+    if block.call(input)
+      result = false
+    end
+  end
+
+  result
+end
 
 # ------ code above this line ------
 
