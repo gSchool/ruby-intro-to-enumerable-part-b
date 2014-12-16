@@ -1,4 +1,11 @@
 def select(items, &block)
+  result = []
+  items.each do |item|
+    if block.call(item)
+      result.push(item)
+    end
+  end
+  result
 end
 
 # ------ code above this line ------
