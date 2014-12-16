@@ -1,4 +1,17 @@
+def group_by(input, &block)
 
+  result = {}
+
+  input.each do |hash|
+    result[block.call(hash)] ||= []
+    result[block.call(hash)] << hash
+  end
+
+  result
+
+
+
+end
 
 # ------ code above this line ------
 

@@ -1,3 +1,17 @@
+def all?(input, &block)
+
+
+  input.each do |element|
+
+    return false if block.call(element)
+
+  end
+
+
+
+  true
+
+end
 
 
 # ------ code above this line ------
