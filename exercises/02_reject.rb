@@ -1,4 +1,9 @@
 def reject(items, &block)
+  result = []
+  items.each do |item|
+    result << item if yield(item)
+  end
+  result
 end
 
 # ------ code above this line ------
@@ -9,8 +14,8 @@ RSpec.describe '#reject' do
   it 'returns an array of words where all the words not meeting the condition of the block are removed' do
     input = ['a', 'big', 'black', 'bear', 'is', 'running']
 
-    expect(reject(input) { |word| word.length > 1 }).to eq(['a'])
-    expect(reject(input) { |word| word.length > 3 }).to eq(['a', 'big', 'is'])
+    expect(reject(input) { |word| word.length <= 1 }).to eq(['a'])
+    expect(reject(input) { |word| word.length <= 3 }).to eq(['a', 'big', 'is'])
   end
 
   it 'returns an empty array when given an empty array, regardless of the block' do

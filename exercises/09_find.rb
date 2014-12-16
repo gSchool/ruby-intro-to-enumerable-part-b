@@ -1,4 +1,9 @@
-
+def find(input, &block)
+  input.each do |item|
+    return item if yield(item)
+  end
+  nil
+end
 
 # ------ code above this line ------
 

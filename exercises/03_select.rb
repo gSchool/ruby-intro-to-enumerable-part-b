@@ -1,4 +1,9 @@
 def select(items, &block)
+  result = []
+  items.each do |item|
+    result << item if yield(item)
+  end
+  result
 end
 
 # ------ code above this line ------

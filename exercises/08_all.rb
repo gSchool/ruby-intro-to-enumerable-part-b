@@ -1,4 +1,9 @@
-
+def all?(input, &block)
+  input.each do |item|
+    return false if yield(item)
+  end
+  true
+end
 
 # ------ code above this line ------
 
