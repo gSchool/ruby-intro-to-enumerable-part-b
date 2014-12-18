@@ -1,4 +1,25 @@
+def any?(items, &block)
+  items.each do |item|
+    if block.call(item)
+      return true
+    end
+  end
+  return false
+end
 
+
+# same as:
+# return true if block.call(item)
+
+# return true or false ?, so don't need a result
+# only 
+#
+#
+#  x ||= y
+#  x will return y only if x is nil or false
+#
+#  x &&= y
+#  x will return y only if x is anything but nil or false
 
 # ------ code above this line ------
 

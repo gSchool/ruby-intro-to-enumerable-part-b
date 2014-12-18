@@ -1,4 +1,11 @@
 def map(items, &block)
+  result = []
+
+  items.each do |item|
+    # returns the original array in upcase
+    result << block.call(item)
+  end
+  result
 end
 
 # ------ code above this line ------
