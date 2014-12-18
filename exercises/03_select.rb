@@ -1,5 +1,22 @@
 def select(items, &block)
+  result = []
+
+  items.each do |item|
+    # if the block returns true for item
+    # append to result
+    if block.call(item)
+      result << item
+    end
+  end
+
+  result
 end
+
+
+# Similiar but next level to what we did yesterday in ruby-intro-to-enumerable-part-a
+# word.length >
+
+
 
 # ------ code above this line ------
 

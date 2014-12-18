@@ -1,5 +1,22 @@
 def max_by(items, &block)
+  # initial result is set to nil, so if empty array it will just do nothing and drop the result.
+  # the result = nil is just the base case for an empty array
+  result = nil
+  items.each do |item|
+    result ||= item
+    if block.call(result) < block.call(item)
+    result = item
+  end
+  end
+  result
 end
+
+#Truthy is not = to nil or false
+
+# same as:
+# result = item if block.call(result) < block.call(item)
+
+
 
 # ------ code above this line ------
 

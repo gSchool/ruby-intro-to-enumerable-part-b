@@ -1,5 +1,17 @@
 def min_by(items, &block)
+    result = nil
+    items.each do |item|
+      result ||= item
+      if block.call(result) > block.call(item)
+        result = item
+      end
+    end
+    result
 end
+
+# same as:
+# result = item if block.call(result) > block.call(item)
+
 
 # ------ code above this line ------
 

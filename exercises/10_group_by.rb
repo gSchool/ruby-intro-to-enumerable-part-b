@@ -1,3 +1,33 @@
+def group_by(hashes, &block)
+  result = {}
+  hashes.each do |hash|
+    value = block.call(hash)
+    result[value] ||= []
+    result[value] << hash
+  end
+result
+end
+
+# def group_by(hashes, &block)
+#   result = {}
+#   hashes.each do |hash|
+# result[block.call(hash)] || []
+# result[block.call(hash)] << hash
+# end
+# result
+# end
+
+
+# def group_by(hashes, &block)
+#   result = {}
+#   items.each do |item|
+#     evaluated_value = block.call(item)
+#     result[evaluated_value] ||= []
+#     result[evaluated_value] << hash
+#   end
+#   result
+# end
+
 
 
 # ------ code above this line ------

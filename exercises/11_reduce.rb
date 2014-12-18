@@ -1,3 +1,10 @@
+def reduce(collection, initial_value, &block)
+  result = initial_value
+  collection.each do |element|
+    result = block.call(result, element)
+  end
+  result
+end
 
 # ------ code above this line ------
 

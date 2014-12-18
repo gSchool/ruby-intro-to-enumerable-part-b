@@ -1,4 +1,12 @@
 def reject(items, &block)
+  result = []
+  items.each do |item|
+    if block.call(item) == false
+      result << item
+    end
+
+  end
+  result
 end
 
 # ------ code above this line ------
@@ -6,7 +14,7 @@ end
 require 'rspec/autorun'
 
 RSpec.describe '#reject' do
-  it 'returns an array of words where all the words not meeting the condition of the block are removed' do
+  it 'returns an array of words where all the words meeting the condition of the block are removed' do
     input = ['a', 'big', 'black', 'bear', 'is', 'running']
 
     expect(reject(input) { |word| word.length > 1 }).to eq(['a'])
