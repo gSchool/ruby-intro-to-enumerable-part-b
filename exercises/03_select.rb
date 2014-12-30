@@ -1,5 +1,17 @@
 def select(items, &block)
+  result = []
+  items.each do |item|
+    # if block returns true
+    # add to result
+    if block.call(item)
+      result << item
+    end
+  end
+
+  result
 end
+
+
 
 # ------ code above this line ------
 
