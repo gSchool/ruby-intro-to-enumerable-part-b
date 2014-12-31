@@ -1,5 +1,29 @@
-def map(items, &block)
+def reduce(items, value, &block)
+
+  result = value
+
+  items.each do |item|
+    result = block.call(result, item)
+  end
+
+  result
+
 end
+
+def map(items, &block)
+
+  result = []
+
+  items.each do |item|
+    capital_item = block.call(item)
+    result << capital_item
+  end
+
+  result
+
+end
+
+
 
 # ------ code above this line ------
 
