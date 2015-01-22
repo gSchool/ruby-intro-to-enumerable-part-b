@@ -1,3 +1,14 @@
+def reduce(items, starting_value, &block)
+  result = starting_value
+
+  items.each do |item|
+    result ||= item
+    result = block.call(result, item)
+  end
+
+  result
+end
+
 
 # ------ code above this line ------
 
