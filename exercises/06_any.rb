@@ -1,3 +1,12 @@
+def any?(input, &block)
+
+  input.each do |element|
+    return true if  block.call(element)
+  end
+
+  false
+end
+
 
 
 # ------ code above this line ------
