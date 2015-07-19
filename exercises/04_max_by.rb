@@ -1,4 +1,14 @@
 def max_by(items, &block)
+  result = nil
+
+  items.each do |item|
+    result ||= item
+    if block.call(item) > block.call(result)
+      result = item
+    end
+  end
+
+  result
 end
 
 # ------ code above this line ------
@@ -7,7 +17,7 @@ require 'rspec/autorun'
 
 RSpec.describe '#max_by' do
   it 'returns the longest word in an array' do
-    input = ['a', 'big', 'black', 'bear', 'is', 'running']
+    input = ['a','running', 'big', 'black', 'bear', 'is' ]
 
     expect(max_by(input) { |word| word.length }).to eq('running')
   end
