@@ -1,4 +1,12 @@
-
+def any?(items, &block)
+  status = false
+  items.each do |item|
+    if block.call(item)
+      status ||= block.call(item)
+    end
+  end
+  status
+end
 
 # ------ code above this line ------
 

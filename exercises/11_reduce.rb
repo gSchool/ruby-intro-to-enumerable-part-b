@@ -1,3 +1,11 @@
+def reduce(array, initial, &block)
+  result = initial
+  array.each do |item|
+    result = block.call(result, item)
+  end
+  result
+end
+
 
 # ------ code above this line ------
 

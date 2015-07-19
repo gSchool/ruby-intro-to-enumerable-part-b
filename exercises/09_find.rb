@@ -1,4 +1,9 @@
-
+def find(hashes, &block)
+  hashes.each do |hash|
+    return hash if block.call(hash)
+  end
+  nil
+end
 
 # ------ code above this line ------
 
