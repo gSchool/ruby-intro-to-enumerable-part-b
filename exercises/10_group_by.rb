@@ -1,4 +1,11 @@
-
+def group_by(input, &block)
+  result = {}
+  input.each do |item|
+    result[yield(item)] ||= []
+    result[yield(item)] << item
+  end
+  result
+end
 
 # ------ code above this line ------
 

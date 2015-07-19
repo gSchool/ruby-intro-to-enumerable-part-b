@@ -1,4 +1,12 @@
 def min_by(items, &block)
+  result = nil
+  count = nil
+  items.each do |item|
+    result ||= item
+    count ||= yield(item)
+    count = yield(item) && result = item if yield(item) < count
+  end
+  result
 end
 
 # ------ code above this line ------

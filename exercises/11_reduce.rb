@@ -1,4 +1,8 @@
-
+def reduce(input, start)
+  result = input.inject(start) do |sum, num|
+    yield(sum, num)
+  end
+end
 # ------ code above this line ------
 
 require 'rspec/autorun'

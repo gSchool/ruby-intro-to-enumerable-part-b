@@ -1,4 +1,9 @@
 def map(items, &block)
+  result = []
+  items.each do |item|
+    result << yield(item)
+  end
+  result
 end
 
 # ------ code above this line ------
