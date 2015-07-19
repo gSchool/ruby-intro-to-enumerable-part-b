@@ -1,4 +1,12 @@
+def find(items, &block)
+  result = nil
 
+  items.each do |hash|
+    result = hash if block.call(hash)
+  end
+
+  result
+end
 
 # ------ code above this line ------
 

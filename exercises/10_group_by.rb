@@ -1,4 +1,12 @@
+def group_by(items, &block)
+  result = {}
 
+  items.each do |hash|
+    result = result.merge({block.call(hash) => [hash]}){|key, oldval, newval| oldval + newval} if block.call(hash)
+  end
+
+  result
+end
 
 # ------ code above this line ------
 
