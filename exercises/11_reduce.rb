@@ -1,4 +1,10 @@
-
+def reduce(items, number, &block)
+  result = number
+  items.each do |item|
+    result = block.call(result, item)
+  end
+  result
+end
 # ------ code above this line ------
 
 require 'rspec/autorun'
