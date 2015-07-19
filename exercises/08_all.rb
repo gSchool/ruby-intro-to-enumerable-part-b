@@ -1,4 +1,9 @@
-
+def all?(items, &block)
+  items.each do |item|
+    return false if block.call(item) 
+  end
+  true
+end
 
 # ------ code above this line ------
 

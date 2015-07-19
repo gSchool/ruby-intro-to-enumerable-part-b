@@ -1,4 +1,9 @@
-
+def any?(items, &block)
+  items.each do |item|
+    return true if block.call(item)
+  end
+  false
+end
 
 # ------ code above this line ------
 

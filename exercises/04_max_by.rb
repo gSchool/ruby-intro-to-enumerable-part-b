@@ -1,4 +1,11 @@
 def max_by(items, &block)
+  max_item = nil
+  items.each do |item|
+    max_item ||= item
+    max_item = item if block.call(max_item) < block.call(item)
+    
+  end
+  max_item
 end
 
 # ------ code above this line ------
@@ -19,7 +26,7 @@ RSpec.describe '#max_by' do
   end
 
   it 'returns the largest number in the list by comparing the numbers' do
-    input = [1, 2, 512, 4, 256, 8]
+    input = [1, 2, 256, 4, 512, 8]
 
     expect(max_by(input) { |num| num }).to eq(512)
   end

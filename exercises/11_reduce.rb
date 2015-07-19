@@ -1,4 +1,12 @@
-
+def reduce(items, sum, &block)
+  p items
+  p sum
+  items.each do |item|
+    p item
+    sum = block.call(sum, item)
+  end
+  sum
+end
 # ------ code above this line ------
 
 require 'rspec/autorun'

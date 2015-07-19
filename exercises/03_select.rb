@@ -1,4 +1,14 @@
 def select(items, &block)
+  result = []
+
+  items.each do |item|
+    #if the block returns true for item
+    # => append to result
+    if block.call(item)
+      result << item
+    end
+  end
+  result
 end
 
 # ------ code above this line ------
